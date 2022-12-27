@@ -1,0 +1,12 @@
+Package: modheal
+Type: Package
+Title: This package manages and transform health data to visualize it easily
+Version: 0.1.0
+Author: Jorge Alcántara Espinosa
+Maintainer: The package maintainer <jorge.alcantara.espinosa@hotmail.com>
+Description: This package transform health data to coded data,this new data is then shown as graphical plots.It can also does simple lineal models to showneed of reevaluation by variable values.
+License: (CC BY-NC-SA 3.0 ES)
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    ggplot2
