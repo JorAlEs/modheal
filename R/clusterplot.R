@@ -20,11 +20,17 @@ clusterplot <- function(df,k){
         if (!require(Rtsne)) {
             stop("Rtsne not installed")
         } else {
-            if (!require(ggplot2)) {
+            if (!require(tidyr)) {
 
-                stop("ggplot2 not installed")
+                stop("tidyr not installed")
 
             } else {
+                if (!require(ggplot2)) {
+
+                    stop("ggplot2 not installed")
+
+                } else {
+                df$hday <- as.numeric(df$hday)
                 gd <- daisy(df,
                             metric = "gower",
                             type = list(logratio = 3))
@@ -39,10 +45,6 @@ clusterplot <- function(df,k){
                     sil_width[i] <- pam_fit$silinfo$avg.width
 
                 }
-                plot(1:10, sil_width,
-                     xlab = "Number of clusters",
-                     ylab = "Silhouette Width")
-                lines(1:10, sil_width)
                 pam_fit <- pam(gd, diss = TRUE, k)
                 pam_results <- df %>%
                     mutate(cluster = pam_fit$clustering) %>%
@@ -57,4 +59,4 @@ clusterplot <- function(df,k){
                 ggplot(aes(x = X, y = Y), data = tsne_data) +
                     geom_point(aes(color = cluster))
             }
-        }}}
+        }}}}

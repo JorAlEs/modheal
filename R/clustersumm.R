@@ -20,11 +20,17 @@ clustersumm <- function(df,k){
         if (!require(Rtsne)) {
             stop("Rtsne not installed")
         } else {
+            if (!require(tidyr)) {
+
+                stop("tidyr not installed")
+
+            } else {
             if (!require(ggplot2)) {
 
                 stop("ggplot2 not installed")
 
             } else {
+                df$hday <- as.numeric(df$hday)
                 gd <- daisy(df,
                             metric = "gower",
                             type = list(logratio = 3))
@@ -39,14 +45,10 @@ clustersumm <- function(df,k){
                     sil_width[i] <- pam_fit$silinfo$avg.width
 
                 }
-                plot(1:10, sil_width,
-                     xlab = "Number of clusters",
-                     ylab = "Silhouette Width")
-                lines(1:10, sil_width)
                 pam_fit <- pam(gd, diss = TRUE, k)
                 pam_results <- df %>%
                     mutate(cluster = pam_fit$clustering) %>%
                     group_by(cluster) %>%
                     do(the_summary = summary(.))
                 pam_results$the_summary
-            }}}}
+            }}}}}
