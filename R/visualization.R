@@ -22,8 +22,7 @@ visualization <- function(df,y) {
         if(y == "plot2"){plot <- ggplot(df, aes(x = gender, y = hday, fill = gender)) + geom_boxplot()}
         if(y == "plot3"){plot <- ggplot(df, aes(x = gender, ..count..))         + geom_bar(aes(fill=wday),position = "dodge")}
         if(y == "plot4"){plot <- ggplot(df, aes(x = prof, ..count..))         + geom_bar(aes(fill=wday),position = "dodge")}
-        if(y == "plot5"){plot <- ggplot(ggplot(df, aes(x = gender, ..count..))                            + geom_bar(aes(fill=prof),position = "dodge"))}
-        if(y == "plot6"){plot <- ggplot(df, aes(x = age,  fill = prof))         + geom_histogram(col = "grey")}
+        if(y == "plot5"){plot <- ggplot(df, aes(x = age,  fill = prof))         + geom_histogram(col = "grey")}
     }
     return(plot)
 }
