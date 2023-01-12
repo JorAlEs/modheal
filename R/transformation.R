@@ -2,6 +2,8 @@
 
 #' Transform a df into the columns needed for the analysis
 #' @df needs to be assigned to the dataframe chosen.
+#' @origin if the dataframe has a datetime column, we must chose the first date
+#' in this dataframe
 #' @return The data.frame coded.
 #' @author Jorge Alcantara Espinosa
 #' @examples
@@ -12,7 +14,7 @@
 
 
 
-transformation <- function(df){
+transformation <- function(df, origin){
     col = ncol(df)
     if(col < 12){
         miscol <- c((col+1):12)
@@ -33,7 +35,8 @@ transformation <- function(df){
                           ,"actw","acts","wday","hday","census","nday")
         cols <- c("center","act","prof","gender","location","actw","acts","wday","census")
         df[cols] <- lapply(df[cols], factor)
-        df$hday <- as.POSIXct(df$hday, tz = "", format = "%H:%M")
+        df$hday <- as.POSIXct(df$hday, tz = "", format = "%H:%M",
+                              origin = origin)
     }
 
     if(ncol(df) == 12){
