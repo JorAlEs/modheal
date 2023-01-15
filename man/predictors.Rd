@@ -12,11 +12,11 @@ predictors(df,n)
 }
 \arguments{
   \item{df}{
-This item will be the formatted df
+%% ~~ This item will be the formatted df
 
 }
   \item{n}{
-This item will be the number of predictors we need
+%% ~~ This item will be the number of predictors we need
 
 }
 }
@@ -29,7 +29,8 @@ This item will be the number of predictors we need
 \references{
 }
 \author{
-%%  ~~Jorge Miguel Alcántara Espinosa~~
+%%  ~~Jorge Miguel Alcantara Espinosa~~
 }
 \note{
+%% ~~ Please report any bugs to jorge.alcantara.espinosa@hotmail.com ~~
 }

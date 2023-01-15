@@ -17,7 +17,7 @@ visualization(df)
 }
 }
 \details{
-%%  ~~ This function will change the data.frame to a data.frame with 12 columns. These columns will be "center","act","prof",                        "gender","age","location","actw","acts","wday"","hday","census","nday" ~~
+%%  ~~ This function will change the data.frame to a data.frame with 12 columns. These columns will be "center","act","prof","gender","age","location","actw","acts","wday"","hday","census","nday" ~~
 }
 \value{
 %%  ~It returns an updated df
@@ -25,7 +25,8 @@ visualization(df)
 \references{
 }
 \author{
-%%  ~~Jorge Miguel Alcántara Espinosa~~
+%%  ~~Jorge Miguel Alcantara Espinosa~~
 }
 \note{
+%% ~~ Please report any bugs to jorge.alcantara.espinosa@hotmail.com
 }

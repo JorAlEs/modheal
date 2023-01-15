@@ -21,7 +21,7 @@ visualization(df,y)
   }
 }
 \details{
-%%  ~~ There are 6 plots that the user can choose from ~~
+%%  ~~ There are 5 plots that the user can choose from ~~
 }
 \value{
 %%  ~It returns a graphical plot
@@ -30,15 +30,8 @@ visualization(df,y)
 %% ~~ggplot2 : Wickham H (2016). ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York~
 }
 \author{
-%%  ~~Jorge Miguel Alcántara Espinosa~~
+%%  ~~Jorge Miguel Alcantara Espinosa~~
 }
 \note{
-%%  ~~further notes~~
+%%  ~~Please report any bugs to jorge.alcantara.espinosa@hotmail.com~~
 }
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-
