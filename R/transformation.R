@@ -14,7 +14,7 @@
 
 
 
-transformation <- function(df, origin){
+transformation <- function(df){
     col = ncol(df)
     if(col < 12){
         miscol <- c((col+1):12)
@@ -36,7 +36,7 @@ transformation <- function(df, origin){
         cols <- c("center","act","prof","gender","location","actw","acts","wday","census")
         df[cols] <- lapply(df[cols], factor)
         df$hday <- as.POSIXct(df$hday, tz = "", format = "%H:%M",
-                              origin = origin)
+                              origin = df$hday[1])
     }
 
     if(ncol(df) == 12){

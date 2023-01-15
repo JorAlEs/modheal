@@ -24,6 +24,7 @@ kcluster <- function(df){
                 stop("ggplot2 not installed")
 
             } else {
+                df$hday <- as.numeric(df$hday)
                 gd <- daisy(df,
                             metric = "gower",
                             type = list(logratio = 3))
